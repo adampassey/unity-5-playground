@@ -1,0 +1,16 @@
+Temp/
+Obj/
+UnityGenerated/
+Library/*
+.DS_Store
+.DS_Store?
+ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
