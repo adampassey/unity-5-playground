@@ -8,6 +8,7 @@ public class Ship : MonoBehaviour
 	public float warpSpeed = 200f;
 	public float turnDampening = 10f;
 	public float targetPrecision = 5f;
+	public Scanner scanner;
 
 	private float currentSpeed = 0f;
 	public float CurrentSpeed {
@@ -19,13 +20,21 @@ public class Ship : MonoBehaviour
 	public Vector3 Target {
 		get { return target; }
 		set {
+			if (warping) {
+				return;
+			}
 			target = value;
 			goingToTarget = true;
 		}
 	}
-
+	
 	private bool goingToTarget = false;
 	private bool warping = false;
+
+	void Start ()
+	{
+		scanner = gameObject.GetComponentInChildren<Scanner> ();
+	}
 	
 	// Update is called once per frame
 	void Update ()

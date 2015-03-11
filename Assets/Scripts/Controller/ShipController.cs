@@ -25,23 +25,28 @@ public class ShipController : MonoBehaviour
 		if (Input.GetMouseButton (0)) {
 			Vector3 pos = camera.ScreenToWorldPoint (Input.mousePosition);
 			pos.z = 0;
-			Debug.Log (pos);
 
 			ship.Target = pos;
 		}
 
-		if (Input.GetKey (KeyCode.W)) {
+		if (Input.GetKeyDown (KeyCode.W)) {
 			ship.ToggleWarp ();
 		}
 
-		if (Input.GetKey (KeyCode.UpArrow)) {
-			Debug.Log ("Accelerating");
+		if (Input.GetKeyDown (KeyCode.UpArrow)) {
 			ship.Accelerate ();
 		}
 
-		if (Input.GetKey (KeyCode.DownArrow)) {
-			Debug.Log ("Decelerating");
+		if (Input.GetKeyDown (KeyCode.DownArrow)) {
 			ship.Decelerate ();
+		}
+
+		if (Input.GetKeyDown (KeyCode.S)) {
+			ship.scanner.ToggleDisplayRadius ();
+		}
+
+		if (Input.GetKeyDown (KeyCode.D)) {
+			ship.scanner.Scan ();
 		}
 	}
 }
