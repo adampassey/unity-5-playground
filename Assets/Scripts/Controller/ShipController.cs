@@ -33,11 +33,11 @@ public class ShipController : MonoBehaviour
 			ship.ToggleWarp ();
 		}
 
-		if (Input.GetKeyDown (KeyCode.UpArrow)) {
+		if (Input.GetKey (KeyCode.UpArrow)) {
 			ship.Accelerate ();
 		}
 
-		if (Input.GetKeyDown (KeyCode.DownArrow)) {
+		if (Input.GetKey (KeyCode.DownArrow)) {
 			ship.Decelerate ();
 		}
 
