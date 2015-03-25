@@ -4,6 +4,7 @@ using System.Collections;
 public class Planet : MonoBehaviour
 {
 
+	public Vector3 position;
 	public Vector3 spin = Vector3.right;
 	public int speed = 10;
 
