@@ -39,6 +39,21 @@ public class Wormhole : MonoBehaviour
 					galaxy.gameObject.SetActive (true);
 				}
 
+				GameObject playerObject = GameObject.FindGameObjectWithTag ("Player");
+				if (playerObject) {
+					Debug.Log ("Moving Player to new Wormhole");
+					foreach (Wormhole w in galaxy.Wormholes) {
+						if (w.galaxy == universe.currentGalaxy) {
+							Vector3 shipPos = w.gameObject.transform.position;
+							shipPos.y += 100;
+							shipPos.z = 0;
+							playerObject.transform.position = shipPos;
+
+							playerObject.GetComponent<Ship> ().CurrentSpeed = 0;
+						}
+					}
+				}
+
 				//	disable old galaxy
 				Galaxy oldGalaxy = universe.currentGalaxy;
 

@@ -228,11 +228,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11427664, guid: 4763985b34e28d448b878e05421087f6, type: 2}
       propertyPath: bounds.x
-      value: 10000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 11427664, guid: 4763985b34e28d448b878e05421087f6, type: 2}
       propertyPath: bounds.y
-      value: 10000
+      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4763985b34e28d448b878e05421087f6, type: 2}
