@@ -11,6 +11,7 @@ public class Wormhole : MonoBehaviour
 	;
 
 	public Type wormholeType = Type.Wormhole;
+	public Galaxy galaxy;
 
 	public void OnTriggerEnter2D (Collider2D collider)
 	{
@@ -19,7 +20,32 @@ public class Wormhole : MonoBehaviour
 			if (wormholeType == Type.Home) {
 				Application.LoadLevel (Scene.MainScene);
 			} else {
-				Application.LoadLevel (Scene.SpaceScene);
+
+				Universe universe = Universe.GetInstance ();
+
+				if (galaxy == null) {
+					Debug.Log ("No Galaxy, creating a new one...");
+					//	create a new galaxy
+					//	and link to old one
+					Galaxy newGalaxy = GalaxyFactory.RandomizedGalaxy (
+						new Vector2 (10000, 10000),
+						5,
+						5,
+						universe.currentGalaxy
+					);
+					//	this is the galaxy THIS wormhole points to
+					galaxy = newGalaxy;
+				} else {
+					galaxy.gameObject.SetActive (true);
+				}
+
+				//	disable old galaxy
+				Galaxy oldGalaxy = universe.currentGalaxy;
+
+				oldGalaxy.gameObject.SetActive (false);
+
+				universe.SetCurrentGalaxy (galaxy);
+				Debug.Log (universe);
 			}
 		}
 	}

@@ -11,17 +11,30 @@ public static class GalaxyFactory
 	public static Galaxy RandomizedGalaxy (Vector2 bounds, int numberOfPlanets, int numberOfWormholes)
 	{
 		GameObject galaxyObject = new GameObject ();
+		galaxyObject.name = "Galaxy";
 		Galaxy galaxy = galaxyObject.AddComponent<Galaxy> ();
 
 		for (int i = 0; i < numberOfPlanets; i++) {
-			galaxy.Planets.Add (PlanetFactory.RandomizedPlanet (bounds, GalaxyFactory.minPlanetRadius, GalaxyFactory.maxPlanetRadius, GalaxyFactory.maxPlanetSpin));
+			Planet p = PlanetFactory.RandomizedPlanet (bounds, GalaxyFactory.minPlanetRadius, GalaxyFactory.maxPlanetRadius, GalaxyFactory.maxPlanetSpin);
+			galaxy.Planets.Add (p);
+			p.transform.parent = galaxyObject.transform;
 		}
 
 		for (int i = 0; i < numberOfWormholes; i++) {
-			galaxy.Wormholes.Add (WormholeFactory.RandomizeWormhole (bounds));
+			Wormhole w = WormholeFactory.RandomizeWormhole (bounds);
+			galaxy.Wormholes.Add (w);
+			w.transform.parent = galaxyObject.transform;
 		}
 		
 		return galaxy;
+	}
+
+	public static Galaxy RandomizedGalaxy (Vector2 bounds, int numberOfPlanets, int numberOfWormholes, Galaxy galaxy)
+	{
+		Galaxy g = GalaxyFactory.RandomizedGalaxy (bounds, numberOfPlanets, numberOfWormholes);
+		g.Wormholes [0].galaxy = galaxy;
+
+		return g;
 	}
 	
 }

@@ -17,5 +17,10 @@ public class SpaceScene : MonoBehaviour
 	public void Start ()
 	{
 		galaxy = GalaxyFactory.RandomizedGalaxy (bounds, numberOfPlanets, numberOfWormholes);
+
+		Universe universe = Universe.GetInstance ();
+		galaxy.currentGalaxy = true;
+		universe.currentGalaxy = galaxy;
+		universe.galaxies = galaxy;
 	}
 }
