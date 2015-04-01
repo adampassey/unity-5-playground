@@ -13,6 +13,7 @@ public class Galaxy : MonoBehaviour
 	public void Start ()
 	{
 		gameObject.name = "Galaxy: " + Random.Range (0, 1000);
+		DontDestroyOnLoad (this);
 	}
 
 	public override string ToString ()

@@ -22,5 +22,9 @@ public class SpaceScene : MonoBehaviour
 		galaxy.currentGalaxy = true;
 		universe.currentGalaxy = galaxy;
 		universe.galaxies = galaxy;
+
+		//	also create a station on the first galaxy
+		GameObject stationObject = GameObject.Instantiate (Resources.Load ("Prefabs/Station", typeof(GameObject)), new Vector3 (-100, 0, 0), Quaternion.identity) as GameObject;
+		stationObject.transform.parent = galaxy.transform.parent;
 	}
 }
