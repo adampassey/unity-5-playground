@@ -16,15 +16,20 @@ public class SpaceScene : MonoBehaviour
 
 	public void Start ()
 	{
-		galaxy = GalaxyFactory.RandomizedGalaxy (bounds, numberOfPlanets, numberOfWormholes);
-
 		Universe universe = Universe.GetInstance ();
-		galaxy.currentGalaxy = true;
-		universe.currentGalaxy = galaxy;
-		universe.galaxies = galaxy;
 
-		//	also create a station on the first galaxy
-		GameObject stationObject = GameObject.Instantiate (Resources.Load ("Prefabs/Station", typeof(GameObject)), new Vector3 (-100, 0, 0), Quaternion.identity) as GameObject;
-		stationObject.transform.parent = galaxy.transform.parent;
+		if (universe.galaxies == null) {
+			galaxy = GalaxyFactory.RandomizedGalaxy (bounds, numberOfPlanets, numberOfWormholes);
+			galaxy.currentGalaxy = true;
+
+			//	also create a station on the first galaxy
+			GameObject stationObject = GameObject.Instantiate (Resources.Load ("Prefabs/Station", typeof(GameObject)), new Vector3 (-100, 0, 0), Quaternion.identity) as GameObject;
+			stationObject.transform.parent = galaxy.transform;
+
+			universe.currentGalaxy = galaxy;
+			universe.galaxies = galaxy;
+		} else {
+			universe.galaxies.gameObject.SetActive (true);
+		}
 	}
 }

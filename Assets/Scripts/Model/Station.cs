@@ -7,6 +7,10 @@ public class Station : MonoBehaviour
 	{
 		Ship ship = collider.gameObject.GetComponent<Ship> ();
 		if (ship != null) {
+
+			Universe universe = Universe.GetInstance ();
+			universe.currentGalaxy.gameObject.SetActive (false);
+
 			Application.LoadLevel (Scene.MainScene);
 		}
 	}
