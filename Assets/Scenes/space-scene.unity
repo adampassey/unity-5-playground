@@ -393,11 +393,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479826, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 479826, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalRotation.x
-      value: .500000119
+      value: -.500000119
       objectReference: {fileID: 0}
     - target: {fileID: 479826, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalRotation.y
@@ -405,7 +405,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479826, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalRotation.z
-      value: .5
+      value: -.5
       objectReference: {fileID: 0}
     - target: {fileID: 479826, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalRotation.w
@@ -414,6 +414,10 @@ Prefab:
     - target: {fileID: 479826, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445324, guid: 937155a64ef009944b14667b63577b40, type: 2}
+      propertyPath: turnDampening
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 937155a64ef009944b14667b63577b40, type: 2}
