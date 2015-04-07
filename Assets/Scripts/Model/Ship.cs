@@ -80,10 +80,7 @@ public class Ship : MonoBehaviour
 			return;
 		}
 
-		Vector3 vectorToTarget = target - transform.position;
-		Quaternion rotation = Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (vectorToTarget), turnDampening * Time.deltaTime);
-		transform.rotation = rotation;
-
-		transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y, 90);
+		Quaternion rot = Quaternion.LookRotation (target - transform.position, new Vector3 (0, 0, -1));
+		transform.rotation = Quaternion.Slerp (transform.rotation, rot, turnDampening * Time.deltaTime);
 	}
 }
