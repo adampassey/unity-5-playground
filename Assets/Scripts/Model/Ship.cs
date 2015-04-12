@@ -9,6 +9,7 @@ public class Ship : MonoBehaviour
 	public float turnDampening = 10f;
 	public float targetPrecision = 5f;
 	public Scanner scanner;
+	public Interior interior;
 
 	private float currentSpeed = 0f;
 	public float CurrentSpeed {
@@ -34,6 +35,7 @@ public class Ship : MonoBehaviour
 	void Start ()
 	{
 		scanner = gameObject.GetComponentInChildren<Scanner> ();
+		interior = gameObject.GetComponentInChildren<Interior> ();
 	}
 	
 	// Update is called once per frame
