@@ -7,12 +7,14 @@ public class Interior : MonoBehaviour
 
 	private Camera camera;
 	private ShipController shipController;
+	private CrewController crewController;
 	private bool visible = false;
 
 	public void Start ()
 	{
 		camera = Camera.main;
 		shipController = gameObject.GetComponentInParent<ShipController> ();
+		crewController = gameObject.GetComponent<CrewController> ();
 
 		Hide ();
 	}
@@ -32,12 +34,14 @@ public class Interior : MonoBehaviour
 	{
 		StartCoroutine (ShowCoroutine ());
 		shipController.enabled = false;
+		crewController.enabled = true;
 	}
 
 	public void Hide ()
 	{
 		StartCoroutine (HideCoroutine ());
 		shipController.enabled = true;
+		crewController.enabled = false;
 	}
 
 	private IEnumerator ShowCoroutine ()
