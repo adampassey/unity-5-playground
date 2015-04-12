@@ -6,11 +6,14 @@ public class Interior : MonoBehaviour
 	public float triggerDistance = 10;
 
 	private Camera camera;
+	private ShipController shipController;
 	private bool visible = false;
 
 	public void Start ()
 	{
 		camera = Camera.main;
+		shipController = gameObject.GetComponentInParent<ShipController> ();
+
 		Hide ();
 	}
 
@@ -27,14 +30,14 @@ public class Interior : MonoBehaviour
 
 	public void Show ()
 	{
-		Debug.Log ("Showing Interior");
 		StartCoroutine (ShowCoroutine ());
+		shipController.enabled = false;
 	}
 
 	public void Hide ()
 	{
-		Debug.Log ("Hiding Interior");
 		StartCoroutine (HideCoroutine ());
+		shipController.enabled = true;
 	}
 
 	private IEnumerator ShowCoroutine ()
