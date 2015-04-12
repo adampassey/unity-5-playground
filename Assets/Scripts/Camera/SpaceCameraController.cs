@@ -17,7 +17,7 @@ public class SpaceCameraController : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update ()
+	void LateUpdate ()
 	{
 		if (target == null || spaceCamera == null) {
 			return;
