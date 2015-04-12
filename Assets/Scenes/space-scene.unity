@@ -379,7 +379,7 @@ CanvasRenderer:
   m_GameObject: {fileID: 366221377}
 --- !u!1 &1131946396
 GameObject:
-  m_PrefabParentObject: {fileID: 134126, guid: e2a9fc26cac197641b30af9c8e4a8912, type: 2}
+  m_PrefabParentObject: {fileID: 165134, guid: 937155a64ef009944b14667b63577b40, type: 2}
   m_PrefabInternal: {fileID: 1437715288}
 --- !u!1 &1211362519
 GameObject:
@@ -479,44 +479,40 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 405666, guid: e2a9fc26cac197641b30af9c8e4a8912, type: 2}
+    - target: {fileID: 443012, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 405666, guid: e2a9fc26cac197641b30af9c8e4a8912, type: 2}
+    - target: {fileID: 443012, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 405666, guid: e2a9fc26cac197641b30af9c8e4a8912, type: 2}
+    - target: {fileID: 443012, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 405666, guid: e2a9fc26cac197641b30af9c8e4a8912, type: 2}
+    - target: {fileID: 443012, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalRotation.x
       value: -.500000119
       objectReference: {fileID: 0}
-    - target: {fileID: 405666, guid: e2a9fc26cac197641b30af9c8e4a8912, type: 2}
+    - target: {fileID: 443012, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalRotation.y
       value: .5
       objectReference: {fileID: 0}
-    - target: {fileID: 405666, guid: e2a9fc26cac197641b30af9c8e4a8912, type: 2}
+    - target: {fileID: 443012, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalRotation.z
       value: -.5
       objectReference: {fileID: 0}
-    - target: {fileID: 405666, guid: e2a9fc26cac197641b30af9c8e4a8912, type: 2}
+    - target: {fileID: 443012, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_LocalRotation.w
       value: .49999994
       objectReference: {fileID: 0}
-    - target: {fileID: 405666, guid: e2a9fc26cac197641b30af9c8e4a8912, type: 2}
+    - target: {fileID: 443012, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 134126, guid: e2a9fc26cac197641b30af9c8e4a8912, type: 2}
-      propertyPath: m_Name
-      value: Ship - SciFi Fighter Box
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e2a9fc26cac197641b30af9c8e4a8912, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 937155a64ef009944b14667b63577b40, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1556495011
 GameObject:

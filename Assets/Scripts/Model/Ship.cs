@@ -10,6 +10,7 @@ public class Ship : MonoBehaviour
 	public float targetPrecision = 5f;
 	public Scanner scanner;
 	public Interior interior;
+	public bool piloted = true;
 
 	private float currentSpeed = 0f;
 	public float CurrentSpeed {
@@ -21,7 +22,7 @@ public class Ship : MonoBehaviour
 	public Vector3 Target {
 		get { return target; }
 		set {
-			if (warping) {
+			if (!piloted || warping) {
 				return;
 			}
 			target = value;
@@ -66,19 +67,27 @@ public class Ship : MonoBehaviour
 
 	public void Accelerate ()
 	{
+		if (!piloted) {
+			return;
+		}
+
 		currentSpeed ++;
 		currentSpeed = Mathf.Clamp (currentSpeed, 0, maxSpeed);
 	}
 
 	public void Decelerate ()
 	{
+		if (!piloted) {
+			return;
+		}
+
 		currentSpeed --;
 		currentSpeed = Mathf.Clamp (currentSpeed, 0, maxSpeed);
 	}
 
 	private void RotateTowardsTarget ()
 	{
-		if (!goingToTarget) {
+		if (!piloted || !goingToTarget) {
 			return;
 		}
 
