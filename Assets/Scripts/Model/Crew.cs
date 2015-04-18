@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Crew : MonoBehaviour
 {
+	public string name;
 	public float speed = 2;
 	public float agility = 4;
 
@@ -12,7 +13,12 @@ public class Crew : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		name = Random.Range (1, 9999).ToString ();
 		selectedCrew = SelectedCrew.GetInstance ();
+
+		//	currently randomizing crew stats
+		speed = Random.Range (2, 8);
+		agility = Random.Range (4, 12);
 	}
 	
 	// Update is called once per frame
