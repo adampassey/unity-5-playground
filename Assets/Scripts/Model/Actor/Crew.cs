@@ -7,6 +7,7 @@ public class Crew : MonoBehaviour
 	public float speed = 2;
 	public float agility = 4;
 	public Hunger hunger;
+	public Fatigue fatigue;
 
 	private SelectedCrew selectedCrew;
 	private Tile targetTile;
@@ -31,6 +32,7 @@ public class Crew : MonoBehaviour
 		//	so it's invoked in the main thread instead
 		//	of the loading thread. Needs refactor.
 		hunger = new Hunger ();
+		fatigue = new Fatigue ();
 	}
 	
 	// Update is called once per frame
