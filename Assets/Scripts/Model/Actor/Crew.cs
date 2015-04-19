@@ -6,7 +6,7 @@ public class Crew : MonoBehaviour
 	public string name;
 	public float speed = 2;
 	public float agility = 4;
-	public Hunger hunger = new Hunger ();
+	public Hunger hunger;
 
 	private SelectedCrew selectedCrew;
 	private Tile targetTile;
@@ -21,7 +21,7 @@ public class Crew : MonoBehaviour
 		speed = Random.Range (2, 8);
 		agility = Random.Range (4, 12);
 
-		//	this sucks to have to do
+		//	Hunger must be invoked within Start()
 		//	essentially, in Unity, loading happens
 		//	in a separate thread and invoking anything
 		//	in the Unity API on this thread causes
@@ -30,7 +30,7 @@ public class Crew : MonoBehaviour
 		//	the gradual increase in hunger in a Start()
 		//	so it's invoked in the main thread instead
 		//	of the loading thread. Needs refactor.
-		hunger.Begin ();
+		hunger = new Hunger ();
 	}
 	
 	// Update is called once per frame

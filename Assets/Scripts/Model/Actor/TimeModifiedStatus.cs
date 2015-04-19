@@ -10,10 +10,6 @@ public abstract class TimeModifiedStatus : Status
 	public TimeModifiedStatus (int min, int max, int starting, float interval) : base(min, max, starting)
 	{
 		Interval = interval;
-	}
-
-	public void Begin ()
-	{
 		routineRunner = RoutineRunner.GetInstance ();
 		routineRunner.StartCoroutine (modifyStatusRoutine ());
 	}
