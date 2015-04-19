@@ -24,7 +24,7 @@ public class ShipController : MonoBehaviour
 			return;
 		}
 
-		if (selectedShip.Active != ship) {
+		if (selectedShip.Active != ship && !selectedShip.allShipsActive) {
 			return;
 		}
 

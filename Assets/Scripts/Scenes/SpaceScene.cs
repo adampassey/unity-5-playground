@@ -36,7 +36,7 @@ public class SpaceScene : MonoBehaviour
 			Vector3 pos = Vector3.zero;
 			Quaternion rot = new Quaternion (0, 90, -90, 0);
 			for (int i = 0; i < numberOfShips; i++) {
-				pos.y += i * 20;
+				pos.y += i * 30;
 				GameObject shipObject = GameObject.Instantiate (shipPrefab, pos, rot) as GameObject;
 				Ship s = shipObject.GetComponent<Ship> ();
 				fleetController.AddShip (s);
@@ -44,6 +44,7 @@ public class SpaceScene : MonoBehaviour
 					SelectedShip selectedShip = SelectedShip.GetInstance ();
 					selectedShip.Active = s;
 				}
+
 			}
 
 		} else {

@@ -9,4 +9,5 @@ public class SelectedShip : Singleton<SelectedShip>
 		get { return active; }
 		set { active = value; }
 	}
+	public bool allShipsActive = false;
 }

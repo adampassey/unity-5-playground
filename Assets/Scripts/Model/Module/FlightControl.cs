@@ -25,8 +25,9 @@ public class FlightControl : MonoBehaviour
 			Debug.Log ("Ship is now being piloted.");
 			if (ship == null) {
 				Debug.Log ("Trying to pilot ship, but ship is null...");
+			} else {
+				ship.piloted = true;
 			}
-			ship.piloted = true;
 		}
 	}
 

@@ -19,7 +19,11 @@ public class FleetController : Singleton<FleetController>
 	{
 		if (Input.GetKeyDown (KeyCode.Alpha0)) {
 			Debug.Log ("Selecting ALL ships");
-			//	TODO: all ships!
+			if (selectedShip.allShipsActive) {
+				selectedShip.allShipsActive = false;
+			} else {
+				selectedShip.allShipsActive = true;
+			}
 		}
 
 		if (Input.GetKeyDown (KeyCode.Alpha1)) {
