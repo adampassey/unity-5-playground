@@ -9,6 +9,8 @@ public class Tile : MonoBehaviour
 	void Start ()
 	{
 		crewController = gameObject.GetComponentInParent<CrewController> ();
+		Debug.Log ("Tile starting up. crew controller is:");
+		Debug.Log (crewController);
 	}
 	
 	// Update is called once per frame

@@ -23,6 +23,9 @@ public class FlightControl : MonoBehaviour
 		Crew crew = other.GetComponent<Crew> ();
 		if (crew != null) {
 			Debug.Log ("Ship is now being piloted.");
+			if (ship == null) {
+				Debug.Log ("Trying to pilot ship, but ship is null...");
+			}
 			ship.piloted = true;
 		}
 	}

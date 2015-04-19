@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72479545f63b2b64391b70873417f98f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1131946396}
+  target: {fileID: 0}
   minSize: 5
   maxSize: 10000
   followTarget: 1
@@ -226,14 +226,6 @@ Prefab:
     - target: {fileID: 414106, guid: 4763985b34e28d448b878e05421087f6, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11427664, guid: 4763985b34e28d448b878e05421087f6, type: 2}
-      propertyPath: bounds.x
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 11427664, guid: 4763985b34e28d448b878e05421087f6, type: 2}
-      propertyPath: bounds.y
-      value: 5000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4763985b34e28d448b878e05421087f6, type: 2}
@@ -633,10 +625,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1128652556}
---- !u!1 &1131946396
-GameObject:
-  m_PrefabParentObject: {fileID: 169550, guid: 937155a64ef009944b14667b63577b40, type: 2}
-  m_PrefabInternal: {fileID: 1437715288}
 --- !u!1 &1211362519
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +754,10 @@ Prefab:
     - target: {fileID: 455764, guid: 937155a64ef009944b14667b63577b40, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 169550, guid: 937155a64ef009944b14667b63577b40, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 937155a64ef009944b14667b63577b40, type: 2}

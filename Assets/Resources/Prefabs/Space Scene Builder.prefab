@@ -39,15 +39,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bd5fda107c56474ea160395c9992256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounds: {x: 10000, y: 10000}
+  bounds: {x: 5000, y: 5000}
   numberOfPlanets: 5
-  minPlanetRadius: 500
-  maxPlanetRadius: 3000
-  maxPlanetSpin: 3
   numberOfWormholes: 3
   homeWormholeSpawn: {x: -100, y: 0, z: 0}
+  galaxy: {fileID: 0}
   planetPrefab: {fileID: 189604, guid: 5321ed10ef664c446822d9e6a5c38a32, type: 2}
   wormholePrefab: {fileID: 194714, guid: 1e49fc4f98c65e246a6e13479a65019c, type: 2}
+  shipPrefab: {fileID: 169550, guid: 937155a64ef009944b14667b63577b40, type: 2}
+  numberOfShips: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -10,18 +10,26 @@ public class SpaceCameraController : MonoBehaviour
 	public bool followTarget = false;
 
 	private Camera spaceCamera;
+	private SelectedShip selectedShip;
 
 	void Start ()
 	{
 		spaceCamera = gameObject.GetComponent<Camera> ();
+		selectedShip = SelectedShip.GetInstance ();
 	}
 
 	// Update is called once per frame
 	void LateUpdate ()
 	{
-		if (target == null || spaceCamera == null) {
+		if (spaceCamera == null) {
 			return;
 		}
+
+		if (selectedShip.Active == null) {
+			return;
+		}
+
+		target = selectedShip.Active.gameObject;
 
 		transform.LookAt (target.transform.position);
 		GetScrollWheelInput ();

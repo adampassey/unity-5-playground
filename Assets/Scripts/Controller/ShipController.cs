@@ -7,18 +7,24 @@ public class ShipController : MonoBehaviour
 
 	private Camera camera;
 	private Ship ship;
+	private SelectedShip selectedShip;
 
 	// Use this for initialization
 	void Start ()
 	{
 		camera = Camera.main;
 		ship = gameObject.GetComponent<Ship> ();
+		selectedShip = SelectedShip.GetInstance ();
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		if (camera == null) {
+			return;
+		}
+
+		if (selectedShip.Active != ship) {
 			return;
 		}
 
