@@ -5,7 +5,14 @@ public abstract class Status
 {
 	public int Min;
 	public int Max;
-	public int Current;
+
+	private int current;
+	public int Current {
+		get { return current; }
+		set { 
+			current = Mathf.Clamp (value, Min, Max);
+		}
+	}
 
 	public Status (int min, int max, int starting)
 	{
