@@ -6,6 +6,7 @@ public class Crew : MonoBehaviour
 	public string name;
 	public float speed = 2;
 	public float agility = 4;
+	public Hunger hunger = new Hunger ();
 
 	private SelectedCrew selectedCrew;
 	private Tile targetTile;
@@ -19,6 +20,17 @@ public class Crew : MonoBehaviour
 		//	currently randomizing crew stats
 		speed = Random.Range (2, 8);
 		agility = Random.Range (4, 12);
+
+		//	this sucks to have to do
+		//	essentially, in Unity, loading happens
+		//	in a separate thread and invoking anything
+		//	in the Unity API on this thread causes
+		//	a Unity Exception. Because of this, I
+		//	need to invoke the coroutine that handles
+		//	the gradual increase in hunger in a Start()
+		//	so it's invoked in the main thread instead
+		//	of the loading thread. Needs refactor.
+		hunger.Begin ();
 	}
 	
 	// Update is called once per frame
@@ -48,5 +60,6 @@ public class Crew : MonoBehaviour
 	{
 		Debug.Log ("Clicked on crew");
 		selectedCrew.Active = this;
+		Debug.Log ("Current hunger is: " + hunger.Current);
 	}
 }
