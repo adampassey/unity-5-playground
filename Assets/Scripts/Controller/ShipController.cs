@@ -8,6 +8,7 @@ public class ShipController : MonoBehaviour
 	private Camera camera;
 	private Ship ship;
 	private SelectedShip selectedShip;
+	private Universe universe;
 
 	// Use this for initialization
 	void Start ()
@@ -15,6 +16,7 @@ public class ShipController : MonoBehaviour
 		camera = Camera.main;
 		ship = gameObject.GetComponent<Ship> ();
 		selectedShip = SelectedShip.GetInstance ();
+		universe = Universe.GetInstance ();
 	}
 	
 	// Update is called once per frame
@@ -25,6 +27,10 @@ public class ShipController : MonoBehaviour
 		}
 
 		if (selectedShip.Active != ship && !selectedShip.allShipsActive) {
+			return;
+		}
+
+		if (selectedShip.allShipsActive && universe.currentGalaxy != ship.galaxy) {
 			return;
 		}
 

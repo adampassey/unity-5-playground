@@ -39,6 +39,7 @@ public class SpaceScene : MonoBehaviour
 				pos.y += i * 30;
 				GameObject shipObject = GameObject.Instantiate (shipPrefab, pos, rot) as GameObject;
 				Ship s = shipObject.GetComponent<Ship> ();
+				s.galaxy = galaxy;
 				fleetController.AddShip (s);
 				if (i == 0) {
 					SelectedShip selectedShip = SelectedShip.GetInstance ();

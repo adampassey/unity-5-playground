@@ -11,6 +11,7 @@ public class Ship : MonoBehaviour
 	public Scanner scanner;
 	public Interior interior;
 	public bool piloted = true;
+	public Galaxy galaxy;
 
 	private float currentSpeed = 0f;
 	public float CurrentSpeed {

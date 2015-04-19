@@ -341,6 +341,7 @@ MonoBehaviour:
   scanner: {fileID: 0}
   interior: {fileID: 0}
   piloted: 1
+  galaxy: {fileID: 0}
 --- !u!23 &518236265
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -841,6 +842,7 @@ MonoBehaviour:
   scanner: {fileID: 0}
   interior: {fileID: 0}
   piloted: 1
+  galaxy: {fileID: 0}
 --- !u!23 &1962705447
 MeshRenderer:
   m_ObjectHideFlags: 0
