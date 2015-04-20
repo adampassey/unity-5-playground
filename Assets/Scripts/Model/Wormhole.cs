@@ -29,8 +29,6 @@ public class Wormhole : MonoBehaviour
 			);
 			//	this is the galaxy THIS wormhole points to
 			galaxy = newGalaxy;
-		} else {
-			galaxy.gameObject.SetActive (true);
 		}
 
 		Ship ship = collider.gameObject.GetComponent<Ship> ();
@@ -54,9 +52,24 @@ public class Wormhole : MonoBehaviour
 			Galaxy oldGalaxy = universe.currentGalaxy;
 
 			oldGalaxy.gameObject.SetActive (false);
+			galaxy.gameObject.SetActive (true);
 
 			universe.SetCurrentGalaxy (galaxy);
 			Debug.Log (universe);
+
+			//	make sure all other ships in this
+			//	galaxy are displayed
+			FleetController fleetController = FleetController.GetInstance ();
+			foreach (Ship s in fleetController.ships) {
+				if (s.galaxy == galaxy) {
+					s.gameObject.SetActive (true);
+				} else {
+					s.gameObject.SetActive (false);
+				}
+			}
+
+		} else {
+			ship.gameObject.SetActive (false);
 		}
 	}
 

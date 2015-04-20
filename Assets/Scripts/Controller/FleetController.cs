@@ -57,6 +57,14 @@ public class FleetController : Singleton<FleetController>
 		} else {
 			universe.SetCurrentGalaxy (ship.galaxy);
 			selectedShip.Active = ship;
+
+			//	other ships need to hide now
+			foreach (Ship s in ships) {
+				if (s.galaxy == ship.galaxy)
+					s.gameObject.SetActive (true);
+				else
+					s.gameObject.SetActive (false);
+			}
 		}
 	}
 }
