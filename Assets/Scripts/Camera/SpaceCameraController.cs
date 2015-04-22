@@ -54,14 +54,6 @@ public class SpaceCameraController : MonoBehaviour
 			return;
 		}
 
-        /*
-		Vector3 pos = transform.position;
-		pos.x = target.transform.position.x;
-		pos.y = target.transform.position.y;
-
-		transform.position = pos;
-        */
-
         Vector3 difference = target.transform.position - transform.position;
         difference.z = 0;
 
