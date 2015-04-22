@@ -8,6 +8,7 @@ public class SpaceCameraController : MonoBehaviour
 	public float minSize = 10f;
 	public float maxSize = 300f;
 	public bool followTarget = false;
+    public float speed = 2f;
 
 	private Camera spaceCamera;
 	private SelectedShip selectedShip;
@@ -31,7 +32,6 @@ public class SpaceCameraController : MonoBehaviour
 
 		target = selectedShip.Active.gameObject;
 
-		transform.LookAt (target.transform.position);
 		GetScrollWheelInput ();
 		FollowTarget ();
 
@@ -54,10 +54,17 @@ public class SpaceCameraController : MonoBehaviour
 			return;
 		}
 
+        /*
 		Vector3 pos = transform.position;
 		pos.x = target.transform.position.x;
 		pos.y = target.transform.position.y;
 
 		transform.position = pos;
+        */
+
+        Vector3 difference = target.transform.position - transform.position;
+        difference.z = 0;
+
+        transform.Translate(difference * speed * Time.deltaTime);
 	}
 }
