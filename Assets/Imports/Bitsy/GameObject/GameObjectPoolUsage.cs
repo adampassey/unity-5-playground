@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using AdamPassey.GameObjectPool;
+
+using Bitsy.GameObjectPool;
 
 public class GameObjectPoolUsage : MonoBehaviour {
 
@@ -12,7 +13,6 @@ public class GameObjectPoolUsage : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		gameObjectPool = new GameObjectPool<RollingBall>(poolPrefab, poolCount);
-		StartCoroutine(gameObjectPool.CreatePool());
 	}
 	
 	// Update is called once per frame

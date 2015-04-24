@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-using AdamPassey.Inventory;
+using Bitsy.UserInterface.Inventory;
+using Bitsy.Util;
 
-namespace AdamPassey.UserInterface {
+namespace Bitsy.UserInterface {
 
 	/**
 	 * 	Singleton that contains the item that is
@@ -12,7 +13,7 @@ namespace AdamPassey.UserInterface {
 	 * 	added to the scene directly- instead use 
 	 * 	`GetInstance` to retrieve and interact with instance
 	 **/
-	public class DraggedItem : MonoBehaviour {
+	public class DraggedItem : Singleton<DraggedItem> {
 
 		public int tilesize = 50;
 		public DraggableItem item;
@@ -20,18 +21,6 @@ namespace AdamPassey.UserInterface {
 		private static DraggedItem instance;
 		private GameObject droppableScreenOverlay;
 		private bool showDroppableScreenOverlay = false;
-
-		/**
-		 *	Get the instance
-		 **/
-		public static DraggedItem GetInstance() {
-			if (instance == null) {
-				GameObject go = new GameObject();
-				go.name = "Dragged Item Singleton";
-				instance = go.AddComponent<DraggedItem>();
-			}
-			return instance;
-		}
 
 		/**
 		 *	Create a Droppable Screen Overlay that will receive

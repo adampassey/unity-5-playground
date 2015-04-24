@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-using AdamPassey.Inventory;
-using AdamPassey.UserInterface.Handler;
+using Bitsy.UserInterface.Handler;
 
-namespace AdamPassey.UserInterface.Element {
+namespace Bitsy.UserInterface.Element {
 
 	public static class Slot {
 
@@ -32,6 +31,7 @@ namespace AdamPassey.UserInterface.Element {
 				//	fire the mouse-up event on the handler
 				if (UnityEngine.Event.current.type == EventType.MouseUp && draggedItem.item != null) {
 					if (handler.ItemDropped(draggedItem.item)) {
+						draggedItem.item.PutDown();
 						draggedItem.item = null;
 					}
 					UnityEngine.Event.current.Use();

@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
-using AdamPassey.Inventory;
-using AdamPassey.Equipment;
-using AdamPassey.ActionBar;
-using AdamPassey.GameState;
-using AdamPassey.UserInterface;
-using AdamPassey.Animation;
+using Bitsy.UserInterface.Inventory;
+using Bitsy.UserInterface.Inventory.Equipment;
+using Bitsy.UserInterface.ActionBar;
+using Bitsy.GameState;
+using Bitsy.UserInterface;
+using Bitsy.Animation;
 
 public class ActorController : MonoBehaviour {
 
@@ -20,6 +22,11 @@ public class ActorController : MonoBehaviour {
 	private Popup popup;
 	private AnimationSync animationSync;
 
+	//	testing the text component
+	//	with the new UI
+	private Text speech;
+	private string[] sayings = new string[5] { "Hi!", "This is fun!", "What do I do now?", "Huh?", "*wave*" };
+
 	// Use this for initialization
 	void Start() {
 		animator = gameObject.GetComponent<Animator>();
@@ -31,6 +38,11 @@ public class ActorController : MonoBehaviour {
 		//	equipment requires an animation sync
 		//	to sync the animation of worn items
 		equipment.animationSync = animationSync;
+
+		//	get the speech element and randomly
+		//	update it
+		speech = GetComponentInChildren<Text>();
+		StartCoroutine(saySomething());
 
 		GameState.SetState(GameState.States.Running);
 	}
@@ -107,6 +119,15 @@ public class ActorController : MonoBehaviour {
 		} else {
 			Destroy(gameObject.GetComponent<Popup>());
 			popup = null;
+		}
+	}
+
+	private IEnumerator saySomething() {
+		for (;;) {
+			int rng = Random.Range(0, 5);
+			speech.text = sayings[rng];
+
+			yield return new WaitForSeconds(5.0f);
 		}
 	}
 
