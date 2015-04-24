@@ -423,8 +423,8 @@ MonoBehaviour:
     x: 50
     y: 50
     width: 270
-    height: 270
-  itemOffset: {x: 10, y: 10}
+    height: 310
+  itemOffset: {x: 10, y: 50}
   draggableArea:
     serializedVersion: 2
     x: 0
@@ -456,6 +456,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec932bb0e4b0884a93dd3c2d43d5df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryItems:
+  - {fileID: 183958, guid: dd93ab0ef9c213848ac5362926ab0171, type: 2}
+  - {fileID: 183958, guid: dd93ab0ef9c213848ac5362926ab0171, type: 2}
+  - {fileID: 183958, guid: dd93ab0ef9c213848ac5362926ab0171, type: 2}
+  - {fileID: 183958, guid: dd93ab0ef9c213848ac5362926ab0171, type: 2}
+  - {fileID: 108574, guid: c849f71932c184a48b059e09b066da93, type: 2}
+  - {fileID: 108574, guid: c849f71932c184a48b059e09b066da93, type: 2}
+  - {fileID: 108574, guid: c849f71932c184a48b059e09b066da93, type: 2}
+  - {fileID: 108574, guid: c849f71932c184a48b059e09b066da93, type: 2}
+  - {fileID: 108574, guid: c849f71932c184a48b059e09b066da93, type: 2}
+  - {fileID: 108574, guid: c849f71932c184a48b059e09b066da93, type: 2}
+  - {fileID: 108574, guid: c849f71932c184a48b059e09b066da93, type: 2}
+  - {fileID: 108574, guid: c849f71932c184a48b059e09b066da93, type: 2}
+  - {fileID: 104324, guid: 6a20d43af3ce530459a76fe16410db09, type: 2}
+  - {fileID: 104324, guid: 6a20d43af3ce530459a76fe16410db09, type: 2}
+  - {fileID: 104324, guid: 6a20d43af3ce530459a76fe16410db09, type: 2}
+  - {fileID: 104324, guid: 6a20d43af3ce530459a76fe16410db09, type: 2}
+  - {fileID: 172942, guid: cb5aec763bf1ffb478828edf03df8c95, type: 2}
+  - {fileID: 172942, guid: cb5aec763bf1ffb478828edf03df8c95, type: 2}
+  - {fileID: 172942, guid: cb5aec763bf1ffb478828edf03df8c95, type: 2}
+  - {fileID: 172942, guid: cb5aec763bf1ffb478828edf03df8c95, type: 2}
 --- !u!1 &1192354325
 GameObject:
   m_ObjectHideFlags: 0

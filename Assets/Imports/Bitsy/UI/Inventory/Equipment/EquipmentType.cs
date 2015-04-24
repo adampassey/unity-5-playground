@@ -16,6 +16,9 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 		Head,
 		Legs,
 		Hands,
-		Feet
+		Feet,
+        Weapon,
+        Flight,
+        Utility
 	}
 }
