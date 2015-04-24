@@ -12,7 +12,7 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 
 		private Rect windowRect = new Rect(10, 10, 70, 200);
 		private EquipmentSlotHandler handler;
-		private DraggedItem draggedItem;
+		protected DraggedItem draggedItem;
 
 		public void Start() {
 			draggedItem = DraggedItem.GetInstance();
@@ -31,7 +31,7 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 			return equipmentGUI;
 		}
 
-		public void OnGUI() {
+		public virtual void OnGUI() {
 			//	using the Instance ID as the window ID
 			windowRect = GUI.Window(gameObject.GetInstanceID(), windowRect, OnEquipmentWindow, "");
 		}
@@ -39,7 +39,7 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 		/**
 		 * 	Render the equipment GUI for each slot
 		 **/
-		public void OnEquipmentWindow(int windowId) {
+		public virtual void OnEquipmentWindow(int windowId) {
 			//	head slot
 			if (equipment.IsSlotFree(EquipmentType.Head)) {
 				EquipmentSlotHandler headHandler = new EquipmentSlotHandler(gameObject, EquipmentType.Head, equipment);

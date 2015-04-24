@@ -13,8 +13,8 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 
 		private Dictionary<EquipmentType, GameObject> equipment;
 		private EquipmentGUI equipmentGUI;
-		private GameObject equipmentContainer;
-		private GameObject equipmentGUIContainer;
+		protected GameObject equipmentContainer;
+		protected GameObject equipmentGUIContainer;
 
 		// Use this for initialization
 		void Start() {
@@ -22,8 +22,14 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 			equipmentContainer = GameObjectFactory.NewGameObject("Equipment", gameObject.transform);
 			equipmentGUIContainer = GameObjectFactory.NewGameObject("Equipment GUI", gameObject.transform);
 
-			equipmentGUI = EquipmentGUI.CreateComponent(equipmentGUIContainer, this);
+            //  this is a temporary hack to get
+            //  the ship component GUI to render
+            equipmentGUI = CreateEquipmentUI();
 		}
+
+        public virtual EquipmentGUI CreateEquipmentUI() {
+            return EquipmentGUI.CreateComponent(equipmentGUIContainer, this);
+        }
 
 		/**
 		 * 	Equip an item at a given type. This will disable the item's
