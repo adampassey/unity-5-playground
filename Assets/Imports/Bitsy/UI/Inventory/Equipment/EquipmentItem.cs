@@ -27,7 +27,9 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 		public virtual void Equip() {
 			if (defaultRenderingLayer) {
 				renderingLayer = spriteRenderer.sortingLayerID;
-				spriteRenderer.sortingOrder = (int)equipmentType;
+                if (spriteRenderer != null) {
+                    spriteRenderer.sortingOrder = (int)equipmentType;
+                }
 			}
 		}
 

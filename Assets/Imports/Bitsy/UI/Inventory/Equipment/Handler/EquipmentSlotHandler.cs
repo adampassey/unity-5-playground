@@ -27,7 +27,7 @@ namespace Bitsy.UserInterface.Inventory.Equipment.Handler {
 		public override bool ItemDropped(DraggableItem item) {
 			EquipmentItem equipmentItem = item.GetComponent<EquipmentItem>();
 			if (equipmentItem != null && equipmentItem.equipmentType == equipmentType) {
-				if (equipment.IsSlotFree(equipmentType)) {
+                if (equipment.IsSlotFree(equipmentType)) {
 					equipment.Equip(equipmentType, equipmentItem);
 					return true;
 				}

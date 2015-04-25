@@ -19,28 +19,17 @@ public class ShipEquipmentUI : EquipmentGUI {
     public override void OnEquipmentWindow(int windowId) {
 
         //	head slot
-        if (equipment.IsSlotFree(EquipmentType.Head)) {
-            EquipmentSlotHandler headHandler = new EquipmentSlotHandler(gameObject, EquipmentType.Head, equipment);
+        if (equipment.IsSlotFree(EquipmentType.Flight)) {
+            EquipmentSlotHandler headHandler = new EquipmentSlotHandler(gameObject, EquipmentType.Flight, equipment);
             UI.Slot(new Rect(10, 55, 50, 50), new GUIStyle("button"), headHandler);
         }
         else {
-            EquipmentDraggableHandler headHandler = new EquipmentDraggableHandler(gameObject, EquipmentType.Head, equipment);
-            GUIContent guiContent = equipment.Item(EquipmentType.Head).GetGUIContent();
+            EquipmentDraggableHandler headHandler = new EquipmentDraggableHandler(gameObject, EquipmentType.Flight, equipment);
+            GUIContent guiContent = equipment.Item(EquipmentType.Flight).GetGUIContent();
             UI.Draggable(new Rect(10, 55, 50, 50), guiContent, new GUIStyle("button"), headHandler);
         }
         GUI.Label(new Rect(18, 35, 100, 100), "Flight Control");
 
-        //	chest slot
-        if (equipment.IsSlotFree(EquipmentType.Chest)) {
-            EquipmentSlotHandler chestHandler = new EquipmentSlotHandler(gameObject, EquipmentType.Chest, equipment);
-            UI.Slot(new Rect(10, 130, 50, 50), new GUIStyle("button"), chestHandler);
-        }
-        else {
-            EquipmentDraggableHandler chestHandler = new EquipmentDraggableHandler(gameObject, EquipmentType.Chest, equipment);
-            GUIContent guiContent = equipment.Item(EquipmentType.Chest).GetGUIContent();
-            UI.Draggable(new Rect(10, 130, 50, 50), guiContent, new GUIStyle("button"), chestHandler);
-        }
-        GUI.Label(new Rect(18, 110, 100, 100), "Chest");
 
         if (draggedItem.item == null) {
             GUI.DragWindow(new Rect(0, 0, 70, 30));

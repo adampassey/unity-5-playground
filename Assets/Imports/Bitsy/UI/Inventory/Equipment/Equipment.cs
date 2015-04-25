@@ -11,8 +11,8 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 
 		public AnimationSync animationSync;
 
-		private Dictionary<EquipmentType, GameObject> equipment;
-		private EquipmentGUI equipmentGUI;
+		protected Dictionary<EquipmentType, GameObject> equipment;
+		protected EquipmentGUI equipmentGUI;
 		protected GameObject equipmentContainer;
 		protected GameObject equipmentGUIContainer;
 
@@ -40,11 +40,8 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 		 * 	@param EquipmentItem item The item
 		 **/
 		public void Equip(EquipmentType type, EquipmentItem item) {
-			DisableItem(item);
+            DisableItem(item);
 			equipment.Add(type, item.gameObject);
-			animationSync.ReloadChildAnimators();
-
-			item.Equip();
 		}
 
 		/**
@@ -59,9 +56,7 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 				EquipmentItem item = equipment[type].GetComponent<EquipmentItem>();
 				EnableItem(item);
 				equipment.Remove(type);
-				animationSync.ReloadChildAnimators();
 
-				item.Unequip();
 				return item;
 			}
 			return null;

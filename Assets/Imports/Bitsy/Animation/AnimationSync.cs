@@ -57,6 +57,10 @@ namespace Bitsy.Animation {
 		 * 
 		 **/
 		private void PropagateAnimation() {
+            if (childAnimators == null) {
+                return;
+            }
+
 			foreach (Animator animator in childAnimators) {
 				//	TODO: if this animator doesn't have the 
 				//	currentClipName, this fails.

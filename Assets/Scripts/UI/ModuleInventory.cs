@@ -4,24 +4,27 @@ using System.Collections.Generic;
 
 using Bitsy.UserInterface.Inventory;
 
-public class ModuleInventory : MonoBehaviour {
+public class ModuleInventory : Inventory {
 
     public List<GameObject> inventoryItems;
 
-    private Inventory inventory;
-
-	// Use this for initialization
-	void Start () {
-        inventory = gameObject.GetComponent<Inventory>();
-        foreach (GameObject i in inventoryItems) {
-            inventory.AddObject(i);
-        }
-	}
+    bool initialized = false;
 	
 	// Update is called once per frame
 	void Update () {
-        if (!inventory.IsVisible()) {
-            inventory.Show();
+        if (!initialized) {
+            initialize();
+        }
+        if (!IsVisible()) {
+            Show();
         }
 	}
+
+    private void initialize() {
+        foreach (GameObject i in inventoryItems) {
+            GameObject o = GameObject.Instantiate(i, Vector3.zero, Quaternion.identity) as GameObject;
+            AddObject(o);
+        }
+        initialized = true;
+    }
 }

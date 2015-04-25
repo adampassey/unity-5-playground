@@ -16,7 +16,7 @@ namespace Bitsy.UserInterface.Element {
 		 * 	Draw an open inventory slot
 		 **/
 		public static void Render(Rect position, GUIStyle guiStyle, SlotHandler handler, GUIContent guiContent) {
-			//	create the rendering rect to serve as the rendering position 
+            //	create the rendering rect to serve as the rendering position 
 			//	and the event-receiving area
 			GUI.Box(position, guiContent, guiStyle);
 			
@@ -30,13 +30,20 @@ namespace Bitsy.UserInterface.Element {
 
 				//	fire the mouse-up event on the handler
 				if (UnityEngine.Event.current.type == EventType.MouseUp && draggedItem.item != null) {
-					if (handler.ItemDropped(draggedItem.item)) {
+                    if (handler.ItemDropped(draggedItem.item)) {
 						draggedItem.item.PutDown();
 						draggedItem.item = null;
-					}
+                    }
 					UnityEngine.Event.current.Use();
 				}
 			}
 		}
 	}
 }
+
+/*
+ * Each equpment item has:
+ * sprite renderer
+ * animator (with controller)
+ * audio sources
+ */ 
