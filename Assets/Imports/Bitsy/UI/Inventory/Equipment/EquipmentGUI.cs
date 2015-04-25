@@ -10,11 +10,11 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 
 		public Equipment equipment;
 
-		private Rect windowRect = new Rect(10, 10, 70, 200);
 		private EquipmentSlotHandler handler;
 		protected DraggedItem draggedItem;
+        protected Rect windowRect = new Rect(10, 10, 70, 200);
 
-		public void Start() {
+		public virtual void Start() {
 			draggedItem = DraggedItem.GetInstance();
 		}
 

@@ -191,11 +191,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f8be63edd520032488cf5b981351615d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.39999998
+      value: -.100000001
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f8be63edd520032488cf5b981351615d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.39999998
+      value: -.100000001
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f8be63edd520032488cf5b981351615d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -238,7 +238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &844747034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,8 +363,9 @@ GameObject:
   - 95: {fileID: 860285615}
   - 114: {fileID: 860285614}
   - 212: {fileID: 860285616}
+  - 114: {fileID: 860285617}
   m_Layer: 0
-  m_Name: Inventory
+  m_Name: Ship Builder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,7 +391,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860285608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: .300000012, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -480,6 +481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationSync: {fileID: 0}
+  shipPrefab: {fileID: 122740, guid: 1d0dfc2b6da83d74fb38ab89029a1ac0, type: 2}
 --- !u!95 &860285615
 Animator:
   serializedVersion: 3
@@ -523,6 +525,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &860285617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 860285608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84dd7d13dfa5ec34292c5ff353f6bef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1192354325
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +749,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1314616162}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 860285617}
+        m_MethodName: Launch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1314616162
@@ -909,7 +934,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Select Ship
+  m_Text: Launch Ship
 --- !u!222 &2113710023
 CanvasRenderer:
   m_ObjectHideFlags: 0

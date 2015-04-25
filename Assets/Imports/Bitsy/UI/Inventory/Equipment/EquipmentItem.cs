@@ -9,6 +9,7 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 
 		public EquipmentType equipmentType;
 		public bool defaultRenderingLayer = true;
+        public GameObject prefabComponent;
 
 		private int renderingLayer;
 		private SpriteRenderer spriteRenderer;

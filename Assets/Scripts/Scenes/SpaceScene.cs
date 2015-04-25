@@ -33,6 +33,7 @@ public class SpaceScene : MonoBehaviour
 			universe.galaxies = galaxy;
 
 			//	span the necessary ships
+            /*
 			Vector3 pos = Vector3.zero;
 			Quaternion rot = new Quaternion (0, 90, -90, 0);
 			for (int i = 0; i < numberOfShips; i++) {
@@ -41,15 +42,41 @@ public class SpaceScene : MonoBehaviour
 				Ship s = shipObject.GetComponent<Ship> ();
 				s.galaxy = galaxy;
 				fleetController.AddShip (s);
+                s.hookedUp = true;
 				if (i == 0) {
 					SelectedShip selectedShip = SelectedShip.GetInstance ();
 					selectedShip.Active = s;
 				}
 
 			}
+            */
+  
 
 		} else {
 			universe.galaxies.gameObject.SetActive (true);
 		}
+
+        GameObject[] ships = GameObject.FindGameObjectsWithTag("Player");
+        if (ships != null) {
+            Debug.Log("ships!");
+            foreach (GameObject ship in ships) {
+                Debug.Log(ship.name);
+                Ship s = ship.GetComponent<Ship>();
+                if (s == null) {
+                    Debug.Log("No ship component on this thing");   
+                }
+
+                Debug.Log(universe);
+                Debug.Log(universe.currentGalaxy);
+                Debug.Log(s.galaxy);
+                
+                s.galaxy = universe.currentGalaxy;
+                fleetController.AddShip(s);
+
+                SelectedShip selectedShip = SelectedShip.GetInstance();
+                selectedShip.Active = s;
+            }
+        }
+
 	}
 }

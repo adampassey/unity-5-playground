@@ -19,6 +19,7 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 		Feet,
         Weapon,
         Flight,
-        Utility
+        Fatigue,
+        Hunger
 	}
 }

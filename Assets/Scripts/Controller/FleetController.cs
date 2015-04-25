@@ -15,6 +15,7 @@ public class FleetController : Singleton<FleetController>
 	{
 		selectedShip = SelectedShip.GetInstance ();
 		universe = Universe.GetInstance ();
+        DontDestroyOnLoad(this);
 	}
 	
 	// Update is called once per frame

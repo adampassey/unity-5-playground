@@ -10,8 +10,8 @@ namespace Bitsy.UserInterface.Inventory.Equipment {
 	public class Equipment : MonoBehaviour {
 
 		public AnimationSync animationSync;
+		public Dictionary<EquipmentType, GameObject> equipment;
 
-		protected Dictionary<EquipmentType, GameObject> equipment;
 		protected EquipmentGUI equipmentGUI;
 		protected GameObject equipmentContainer;
 		protected GameObject equipmentGUIContainer;

@@ -10,4 +10,8 @@ public class SelectedShip : Singleton<SelectedShip>
 		set { active = value; }
 	}
 	public bool allShipsActive = false;
+
+    public void Start() {
+        DontDestroyOnLoad(this);
+    }
 }
