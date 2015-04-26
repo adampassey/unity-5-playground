@@ -4891,7 +4891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 120
-  warpSpeed: 200
+  warpSpeed: 500
   turnDampening: 1
   targetPrecision: 5
   scanner: {fileID: 11496342}
