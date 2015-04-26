@@ -44,6 +44,36 @@ public class FleetController : Singleton<FleetController>
 			Debug.Log ("Selecting ship 3");
 			selectShip ((Ship)ships [2]);
 		}
+
+        if (Input.GetKeyDown(KeyCode.Alpha4)) {
+            Debug.Log("Selecting ship 4");
+            selectShip((Ship)ships[3]);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5)) {
+            Debug.Log("Selecting ship 5");
+            selectShip((Ship)ships[4]);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha6)) {
+            Debug.Log("Selecting ship 6");
+            selectShip((Ship)ships[5]);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha7)) {
+            Debug.Log("Selecting ship 7");
+            selectShip((Ship)ships[6]);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha8)) {
+            Debug.Log("Selecting ship 8");
+            selectShip((Ship)ships[7]);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha9)) {
+            Debug.Log("Selecting ship 9");
+            selectShip((Ship)ships[8]);
+        }
 	}
 
 	public void AddShip (Ship s)
