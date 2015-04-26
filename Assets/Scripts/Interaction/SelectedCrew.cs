@@ -9,4 +9,8 @@ public class SelectedCrew : Singleton<SelectedCrew>
 		get { return active; }
 		set { active = value; }
 	}
+
+    public void Start() {
+        DontDestroyOnLoad(this);
+    }
 }

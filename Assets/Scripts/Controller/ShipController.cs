@@ -23,7 +23,7 @@ public class ShipController : MonoBehaviour
 	void Update ()
 	{
 		if (camera == null) {
-			return;
+            camera = Camera.main;
 		}
 
 		if (selectedShip.Active != ship && !selectedShip.allShipsActive) {

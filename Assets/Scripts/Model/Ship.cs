@@ -12,7 +12,6 @@ public class Ship : MonoBehaviour
 	public Interior interior;
 	public bool piloted = true;
 	public Galaxy galaxy;
-    public bool hookedUp = false;
 
 	private float currentSpeed = 0f;
 	public float CurrentSpeed {

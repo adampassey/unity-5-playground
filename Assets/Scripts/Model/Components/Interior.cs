@@ -49,31 +49,36 @@ public class Interior : MonoBehaviour
 	}
 
     public void AddFlightControl(GameObject flightControl) {
-        flightControl = (GameObject) Instantiate(flightControl, Vector3.zero, new Quaternion(90, -90, 0, 0));
+        flightControl = (GameObject)Instantiate(flightControl, Vector3.zero, Quaternion.identity);
         flightControl.transform.parent = transform;
         flightControl.transform.localPosition = new Vector3(0, 4, 8);
+        flightControl.transform.localRotation = new Quaternion(90, -90, 0, 0);
     }
 
     public void AddWeapon(GameObject weapon) {
-        GameObject weaponOne = (GameObject)Instantiate(weapon, Vector3.zero, new Quaternion(0, 0, 0, 0));
+        GameObject weaponOne = (GameObject)Instantiate(weapon, Vector3.zero, Quaternion.identity);
         weaponOne.transform.parent = transform;
         weaponOne.transform.localPosition = new Vector3(-6.5f, 4.5f, 0);
+        weaponOne.transform.localRotation = new Quaternion(0, 0, 0, 0);
 
-        GameObject weaponTwo = (GameObject)Instantiate(weapon, Vector3.zero, new Quaternion(0, -180, 0, 0));
+        GameObject weaponTwo = (GameObject)Instantiate(weapon, Vector3.zero, Quaternion.identity);
         weaponTwo.transform.parent = transform;
         weaponTwo.transform.localPosition = new Vector3(6.5f, 4.5f, 0);
+        weaponTwo.transform.localRotation = new Quaternion(0, -180, 0, 0);
     }
 
     public void AddBed(GameObject bed) {
-        bed = (GameObject)Instantiate(bed, Vector3.zero, new Quaternion(90, 90, 0, 0));
+        bed = (GameObject)Instantiate(bed, Vector3.zero, Quaternion.identity);
         bed.transform.parent = transform;
         bed.transform.localPosition = new Vector3(-2, 4, -2);
+        bed.transform.localRotation = new Quaternion(90, 90, 0, 0);
     }
 
     public void AddCafeteria(GameObject cafeteria) {
-        cafeteria = (GameObject)Instantiate(cafeteria, Vector3.zero, new Quaternion(90, 90, 0, 0));
+        cafeteria = (GameObject)Instantiate(cafeteria, Vector3.zero, Quaternion.identity);
         cafeteria.transform.parent = transform;
         cafeteria.transform.localPosition = new Vector3(2, 4, -2);
+        cafeteria.transform.localRotation = new Quaternion(90, 90, 0, 0);
     }
 
 	private IEnumerator ShowCoroutine ()
