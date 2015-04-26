@@ -19,6 +19,8 @@ namespace Bitsy.UserInterface {
 		public void Awake() {
 			draggedItem = DraggedItem.GetInstance();
 			name = "Droppable Screen Overlay";
+
+            DontDestroyOnLoad(this);
 		}
 
 		/**

@@ -32,6 +32,8 @@ namespace Bitsy.UserInterface {
 			droppableScreenOverlay = new GameObject();
 			droppableScreenOverlay.gameObject.AddComponent<DroppableScreenOverlay>();
 			droppableScreenOverlay.SetActive(false);
+
+            DontDestroyOnLoad(this);
 		}
 
 		/**

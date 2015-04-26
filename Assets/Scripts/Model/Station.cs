@@ -8,6 +8,9 @@ public class Station : MonoBehaviour
 		Ship ship = collider.gameObject.GetComponent<Ship> ();
 		if (ship != null) {
 
+            //  TODO: take money/items from ship
+            Destroy(ship.gameObject);
+
 			Universe universe = Universe.GetInstance ();
 			universe.currentGalaxy.gameObject.SetActive (false);
 
