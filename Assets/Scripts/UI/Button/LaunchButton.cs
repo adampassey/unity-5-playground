@@ -18,6 +18,21 @@ public class LaunchButton : MonoBehaviour
     
         //  get the ship
         Ship ship = shipPrefab.GetComponent<Ship>();
+
+        //  can we afford the ship?
+        Currency currency = Currency.GetInstance();
+        Debug.Log("Currency is: " + currency.total);
+        Debug.Log("Ship cost is: " + ship.cost);
+        if (ship.cost <= currency.total) {
+            Debug.Log("We can afford this ship.");
+            currency.total = currency.total - ship.cost;
+            Debug.Log("New currency is: " + currency.total);
+        } else {
+            Debug.Log("We can't afford this ship.");
+            Destroy(shipPrefab);
+            return;
+        }
+
         Interior interior = ship.interior;
 
         //  iterate through the equipment and add

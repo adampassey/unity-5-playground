@@ -8,6 +8,7 @@ public class Ship : MonoBehaviour
 	public float warpSpeed = 200f;
 	public float turnDampening = 10f;
 	public float targetPrecision = 5f;
+    public int cost = 1000;
 	public Scanner scanner;
 	public Interior interior;
 	public bool piloted = true;
