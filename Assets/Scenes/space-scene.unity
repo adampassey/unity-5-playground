@@ -471,6 +471,7 @@ MonoBehaviour:
   warpSpeed: 0
   turnDampening: 0
   targetPrecision: 0
+  cost: 1000
   scanner: {fileID: 0}
   interior: {fileID: 0}
   piloted: 1
@@ -1235,6 +1236,7 @@ MonoBehaviour:
   warpSpeed: 0
   turnDampening: 0
   targetPrecision: 0
+  cost: 1000
   scanner: {fileID: 0}
   interior: {fileID: 0}
   piloted: 1

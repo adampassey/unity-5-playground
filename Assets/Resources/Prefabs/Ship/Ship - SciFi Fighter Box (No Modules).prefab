@@ -512,7 +512,7 @@ GameObject:
   - 114: {fileID: 11461544}
   - 114: {fileID: 11491860}
   - 50: {fileID: 5091716}
-  - 58: {fileID: 5850190}
+  - 58: {fileID: 5854280}
   m_Layer: 0
   m_Name: Ship - SciFi Fighter Box (No Modules)
   m_TagString: Player
@@ -2933,7 +2933,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122740}
   m_LocalRotation: {x: -.500000119, y: .5, z: -.5, w: .49999994}
-  m_LocalPosition: {x: -20.657032, y: -.0953373313, z: 0}
+  m_LocalPosition: {x: 4889.51904, y: 1242.80347, z: -100.029617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 411814}
@@ -4319,7 +4319,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!58 &5850190
+--- !u!58 &5854280
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -4331,7 +4331,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 10.5500002
+  m_Radius: 11.2200003
 --- !u!64 &6401142
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -4894,6 +4894,7 @@ MonoBehaviour:
   warpSpeed: 500
   turnDampening: 1
   targetPrecision: 5
+  cost: 1000
   scanner: {fileID: 11496342}
   interior: {fileID: 11475254}
   piloted: 1

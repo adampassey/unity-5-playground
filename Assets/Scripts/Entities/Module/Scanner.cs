@@ -5,11 +5,13 @@ public class Scanner : MonoBehaviour
 {
 
 	private MeshRenderer renderer;
+    private Currency currency;
 
 	void Start ()
 	{
 		renderer = gameObject.GetComponent<MeshRenderer> ();
 		renderer.enabled = false;
+        currency = Currency.GetInstance();
 	}
 
 	public void ToggleDisplayRadius ()
@@ -26,4 +28,9 @@ public class Scanner : MonoBehaviour
 	{
 		Debug.Log ("Scanning...");
 	}
+
+    public void ScanAnomoly(Planet planet) {
+        currency.total += planet.value;
+        planet.Discover();
+    }
 }

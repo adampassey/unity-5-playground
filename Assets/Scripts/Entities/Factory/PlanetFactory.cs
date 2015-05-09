@@ -10,12 +10,13 @@ public static class PlanetFactory
 	public static Planet RandomizedPlanet (Vector2 bounds, int minRadius, int maxRadius, int maxSpin)
 	{
 		int scale = Random.Range (minRadius, maxRadius);
-		Vector3 planetPosition = new Vector3 (Random.Range (-bounds.x, bounds.x), Random.Range (-bounds.y, bounds.y), scale);
+		Vector3 planetPosition = new Vector3 (Random.Range (-bounds.x, bounds.x), Random.Range (-bounds.y, bounds.y), 500);
 		GameObject planetObject = GameObject.Instantiate (Resources.Load (planetPrefab, typeof(GameObject)), planetPosition, Quaternion.identity) as GameObject;
 		planetObject.transform.localScale = new Vector3 (scale, scale, scale);
 		
 		Planet planet = planetObject.GetComponent<Planet> () as Planet;
 		planet.spin.y = Random.Range (-maxSpin, maxSpin);
+        planet.value = (int) Random.Range(50, 100);
 
 		return planet;
 	}

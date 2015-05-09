@@ -9,11 +9,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 414942}
   - 33: {fileID: 3373200}
-  - 135: {fileID: 13554114}
   - 23: {fileID: 2377354}
   - 198: {fileID: 19848310}
   - 199: {fileID: 19927816}
   - 114: {fileID: 11439922}
+  - 50: {fileID: 5094592}
+  - 58: {fileID: 5841366}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6000, y: 6000, z: 100}
+  m_LocalPosition: {x: -661.581238, y: -401.164093, z: -695.999573}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,6 +65,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189604}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!50 &5094592
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189604}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+--- !u!58 &5841366
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189604}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .5
 --- !u!114 &11439922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,20 +104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa42b1f6dd576eb429d3bcc5c1b92dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: {x: 0, y: 0, z: 0}
   spin: {x: 0, y: 1, z: 0}
   speed: 3
---- !u!135 &13554114
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189604}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 499.329987
-  m_Center: {x: 0, y: 0, z: 0}
+  value: 0
+  discovered: 0
 --- !u!198 &19848310
 ParticleSystem:
   m_ObjectHideFlags: 1
