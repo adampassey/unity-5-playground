@@ -25,6 +25,8 @@ public static class GalaxyFactory
 			galaxy.Wormholes.Add (w);
 			w.transform.parent = galaxyObject.transform;
 		}
+
+        galaxy.offset = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
 		
 		return galaxy;
 	}
