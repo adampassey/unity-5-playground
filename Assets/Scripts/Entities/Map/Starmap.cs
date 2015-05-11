@@ -35,6 +35,8 @@ public class Starmap : MonoBehaviour {
             Quaternion.identity
         ) as GameObject;
 
+        galaxyObject.GetComponent<MapHoverable>().text = galaxy.name;
+
         galaxyObject.transform.parent = transform;
         galaxyObject.layer = 8;
 

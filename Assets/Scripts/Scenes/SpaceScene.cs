@@ -14,6 +14,7 @@ public class SpaceScene : MonoBehaviour
 	public GameObject planetPrefab;
 	public GameObject wormholePrefab;
 	public GameObject shipPrefab;
+    public GameObject starmapPrefab;
 	public int numberOfShips = 3;
 
 	public void Start ()
@@ -75,6 +76,9 @@ public class SpaceScene : MonoBehaviour
 
             }
         }
+
+        //  instantiate the starmap
+        GameObject.Instantiate(starmapPrefab, Vector3.zero, Quaternion.identity);
 
 	}
 }

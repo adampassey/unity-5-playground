@@ -47,6 +47,7 @@ MonoBehaviour:
   planetPrefab: {fileID: 189604, guid: 5321ed10ef664c446822d9e6a5c38a32, type: 2}
   wormholePrefab: {fileID: 194714, guid: 1e49fc4f98c65e246a6e13479a65019c, type: 2}
   shipPrefab: {fileID: 169550, guid: 937155a64ef009944b14667b63577b40, type: 2}
+  starmapPrefab: {fileID: 182114, guid: 3e7b29901ceab484baeede901bc2fad2, type: 2}
   numberOfShips: 3
 --- !u!1001 &100100000
 Prefab:
