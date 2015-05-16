@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpaceScene : MonoBehaviour
 {
-	public Vector2 bounds = new Vector2 (10000, 10000);
+	public Vector2 bounds = new Vector2 (50000, 50000);
 
 	public int numberOfPlanets = 3;
 	public int numberOfWormholes = 3;

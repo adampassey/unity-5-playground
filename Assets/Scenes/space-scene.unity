@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   minSize: 5
-  maxSize: 10000
+  maxSize: 100000
   followTarget: 1
   speed: 25
 --- !u!1001 &291135438

@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bd5fda107c56474ea160395c9992256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounds: {x: 5000, y: 5000}
+  bounds: {x: 10000, y: 10000}
   numberOfPlanets: 5
   numberOfWormholes: 3
   homeWormholeSpawn: {x: -100, y: 0, z: 0}
