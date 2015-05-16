@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11439922}
   - 50: {fileID: 5094592}
   - 58: {fileID: 5841366}
+  - 114: {fileID: 11459468}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -109,6 +110,18 @@ MonoBehaviour:
   speed: 3
   value: 0
   discovered: 0
+--- !u!114 &11459468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60829ea9ee87fb844862a7144def1ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 0
 --- !u!198 &19848310
 ParticleSystem:
   m_ObjectHideFlags: 1
