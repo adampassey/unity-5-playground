@@ -9,6 +9,7 @@ public class Galaxy : MonoBehaviour
 	public List<Wormhole> Wormholes = new List<Wormhole> ();
 	public List<Planet> Planets = new List<Planet> ();
 	public bool currentGalaxy = false;
+    public int depth = 1;
 
 	public void Start ()
 	{

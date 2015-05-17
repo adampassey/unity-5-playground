@@ -29,6 +29,7 @@ public class Wormhole : MonoBehaviour
 			);
 			//	this is the galaxy THIS wormhole points to
 			galaxy = newGalaxy;
+            galaxy.depth = universe.currentGalaxy.depth + 1;
 		}
 
 		Ship ship = collider.gameObject.GetComponent<Ship> ();

@@ -64,7 +64,7 @@ public class Scanner : MonoBehaviour
             arrow.name = arrowName;
 
             arrow.transform.LookAt(p.transform);
-            arrow.transform.Translate(Vector3.forward * 50 );
+            arrow.transform.Translate(Vector3.forward * 50);
 
             ScannerArrow scannerArrow = arrow.GetComponent<ScannerArrow>();
             scannerArrow.target = p.gameObject;
@@ -72,7 +72,7 @@ public class Scanner : MonoBehaviour
 	}
 
     public void ScanAnomoly(Planet planet) {
-        currency.total += planet.value;
+        currency.total += planet.value * Universe.GetInstance().currentGalaxy.depth;
         planet.Discover();
     }
 }
