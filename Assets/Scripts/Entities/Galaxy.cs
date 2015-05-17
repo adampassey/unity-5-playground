@@ -8,6 +8,7 @@ public class Galaxy : MonoBehaviour
 
 	public List<Wormhole> Wormholes = new List<Wormhole> ();
 	public List<Planet> Planets = new List<Planet> ();
+    public List<AsteroidBelt> AsteroidBelts = new List<AsteroidBelt>();
 	public bool currentGalaxy = false;
     public int depth = 1;
 

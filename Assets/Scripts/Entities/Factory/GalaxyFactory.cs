@@ -28,6 +28,14 @@ public static class GalaxyFactory
 			w.transform.parent = galaxyObject.transform;
 		}
 
+        int numberOfAsteroidBelts = Random.Range(0, 3);
+        for (int i = 0; i < numberOfAsteroidBelts; i++) {
+            Vector2 size = new Vector2(Random.Range(1000, 5000), Random.Range(1000, 5000));
+            AsteroidBelt a = AsteroidBeltFactory.RandomizedAsteroidBelt(bounds, Random.Range(10, 500), size);
+            galaxy.AsteroidBelts.Add(a);
+            a.transform.parent = galaxyObject.transform;
+        }
+
         galaxy.offset = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), Random.Range(-5, 5));
 		
 		return galaxy;

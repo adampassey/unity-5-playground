@@ -66,6 +66,13 @@ public class Scanner : MonoBehaviour
             scannables.Add(w.GetComponent<Scannable>());
         }
 
+        foreach (AsteroidBelt a in galaxy.AsteroidBelts) {
+            if (a.GetComponent<Scannable>().discovered) {
+                continue;
+            }
+            scannables.Add(a.GetComponent<Scannable>());
+        }
+
         foreach (Scannable s in scannables) {
 
             //  create a new arrow (at the ships location)
