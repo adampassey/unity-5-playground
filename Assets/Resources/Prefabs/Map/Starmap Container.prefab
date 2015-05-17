@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523c937df3ce88c4abdd47336e5160d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  galaxyPrefab: {fileID: 128478, guid: f0d74daa62e19be4b9ff10e442fd1969, type: 2}
+  galaxyPrefab: {fileID: 145354, guid: 8f17612c5e9b74e4d96ae00e49e39d0d, type: 2}
   linePrefab: {fileID: 137816, guid: 476c70e5176c9ce4c8ac9bcea79658c8, type: 2}
 --- !u!114 &11477496
 MonoBehaviour:

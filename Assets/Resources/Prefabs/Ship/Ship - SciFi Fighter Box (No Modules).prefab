@@ -4891,7 +4891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 120
-  warpSpeed: 500
+  warpSpeed: 1000
   turnDampening: 1
   targetPrecision: 5
   cost: 1000
@@ -4910,6 +4910,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8ccbdf4d14b604eb41c1b67ae58157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScannerStrength: .100000001
+  ScannerRange: 5000
 --- !u!135 &13502548
 SphereCollider:
   m_ObjectHideFlags: 1

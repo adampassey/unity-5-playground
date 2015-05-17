@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+
 using System.Collections;
 using System.Collections.Generic;
 
@@ -35,10 +37,22 @@ public class Starmap : MonoBehaviour {
             Quaternion.identity
         ) as GameObject;
 
-        galaxyObject.GetComponent<MapHoverable>().text = galaxy.name;
-
         galaxyObject.transform.parent = transform;
         galaxyObject.layer = 8;
+
+        //  adjust the label on this galaxy-
+        //  currently not a contained object
+        Debug.Log(galaxy.gameObject.name);
+        Text galaxyLabel = galaxyObject.GetComponent<Text>();
+
+        //  Galaxies don't have names?! 
+        //  I have to rely on gameobjects?!
+        if (Universe.GetInstance().galaxies == galaxy) {
+            galaxyLabel.text = galaxy.gameObject.name + " (Home)";
+        }
+        else {
+            galaxyLabel.text = galaxy.gameObject.name;
+        }
 
         foreach (Wormhole wormhole in galaxy.Wormholes) {
             if (wormhole.galaxy == galaxy || wormhole.galaxy == originatingGalaxy || wormhole.galaxy == null) {
