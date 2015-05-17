@@ -8,7 +8,6 @@ public class Planet : MonoBehaviour
 	public Vector3 spin = Vector3.right;
 	public int speed = 10;
     public int value = 0;
-    public bool discovered = false;
 
 	// Use this for initialization
 	void Start ()
@@ -30,9 +29,5 @@ public class Planet : MonoBehaviour
 
         Debug.Log("Ship has collided. Beginning scan.");
         ship.scanner.ScanAnomoly(this);
-    }
-
-    public void Discover() {
-        discovered = true;
     }
 }

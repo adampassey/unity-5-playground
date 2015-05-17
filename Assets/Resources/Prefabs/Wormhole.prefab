@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2332616}
   - 114: {fileID: 11425276}
   - 58: {fileID: 5868486}
+  - 114: {fileID: 11468830}
   m_Layer: 0
   m_Name: Wormhole
   m_TagString: Untagged
@@ -87,6 +88,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wormholeType: 0
+  galaxy: {fileID: 0}
+--- !u!114 &11468830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60829ea9ee87fb844862a7144def1ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 0
+  discovered: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

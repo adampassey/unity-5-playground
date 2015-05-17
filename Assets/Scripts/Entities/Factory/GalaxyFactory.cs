@@ -8,18 +8,20 @@ public static class GalaxyFactory
 	private static int maxPlanetRadius = 1000;
 	private static int maxPlanetSpin = 3;
 
-	public static Galaxy RandomizedGalaxy (Vector2 bounds, int numberOfPlanets, int numberOfWormholes)
+	public static Galaxy RandomizedGalaxy (Vector2 bounds, int maxNumberOfPlanets, int maxNumberOfWormholes)
 	{
 		GameObject galaxyObject = new GameObject ();
 		galaxyObject.name = "Galaxy";
 		Galaxy galaxy = galaxyObject.AddComponent<Galaxy> ();
 
+        int numberOfPlanets = Random.Range(0, maxNumberOfPlanets);
 		for (int i = 0; i < numberOfPlanets; i++) {
 			Planet p = PlanetFactory.RandomizedPlanet (bounds, GalaxyFactory.minPlanetRadius, GalaxyFactory.maxPlanetRadius, GalaxyFactory.maxPlanetSpin);
 			galaxy.Planets.Add (p);
 			p.transform.parent = galaxyObject.transform;
 		}
 
+        int numberOfWormholes = Random.Range(2, maxNumberOfWormholes);
 		for (int i = 0; i < numberOfWormholes; i++) {
 			Wormhole w = WormholeFactory.RandomizeWormhole (bounds);
 			galaxy.Wormholes.Add (w);

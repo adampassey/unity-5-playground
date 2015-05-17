@@ -24,7 +24,7 @@ public class Wormhole : MonoBehaviour
 			Galaxy newGalaxy = GalaxyFactory.RandomizedGalaxy (
 				new Vector2 (10000, 10000),
 				5,
-				5,
+				3,
 				universe.currentGalaxy
 			);
 			//	this is the galaxy THIS wormhole points to

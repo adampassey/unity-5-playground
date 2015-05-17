@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Scanner : MonoBehaviour
 {
@@ -52,10 +53,20 @@ public class Scanner : MonoBehaviour
             }
         }
 
+        List<Scannable> scannables = new List<Scannable>();
+
         foreach (Planet p in galaxy.Planets) {
-            if (p.discovered) {
+            if (p.GetComponent<Scannable>().discovered) {
                 continue;
             }
+            scannables.Add(p.GetComponent<Scannable>());
+        }
+
+        foreach (Wormhole w in galaxy.Wormholes) {
+            scannables.Add(w.GetComponent<Scannable>());
+        }
+
+        foreach (Scannable s in scannables) {
 
             //  create a new arrow (at the ships location)
             GameObject arrow = GameObject.Instantiate(arrowPrefab, ship.transform.position, Quaternion.identity) as GameObject;
@@ -63,16 +74,16 @@ public class Scanner : MonoBehaviour
             arrow.transform.position = ship.transform.position;
             arrow.name = arrowName;
 
-            arrow.transform.LookAt(p.transform);
+            arrow.transform.LookAt(s.transform);
             arrow.transform.Translate(Vector3.forward * 50);
 
             ScannerArrow scannerArrow = arrow.GetComponent<ScannerArrow>();
-            scannerArrow.target = p.gameObject;
+            scannerArrow.target = s.gameObject;
         }
 	}
 
     public void ScanAnomoly(Planet planet) {
         currency.total += planet.value * Universe.GetInstance().currentGalaxy.depth;
-        planet.Discover();
+        planet.GetComponent<Scannable>().Discover();
     }
 }
