@@ -3,13 +3,18 @@ using System.Collections;
 
 public class MapController : MonoBehaviour {
 
-    private GameObject starmapCamera;
+    public GameObject StarmapCamera;
+
     private Starmap starmap;
+    private static MapController self;
+
+    private static string cameraName = "MapCamera";
+    private static string objectName = "Starmap";
 
 	// Use this for initialization
 	void Start () {
-        starmapCamera = GameObject.FindGameObjectWithTag("MapCamera");
-        starmapCamera.active = false;
+        StarmapCamera = GameObject.FindGameObjectWithTag(MapController.cameraName);
+        StarmapCamera.active = false;
 
         starmap = GetComponent<Starmap>();
 	}
@@ -20,13 +25,26 @@ public class MapController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.M)) {
             Debug.Log("Toggling map.");
 
-            if (starmapCamera.active) {
-                starmapCamera.active = false;
+            if (StarmapCamera.active) {
+                StarmapCamera.active = false;
             }
             else {
                 starmap.Build();
-                starmapCamera.active = true;
+                StarmapCamera.active = true;
             }
         }
 	}
+
+    public bool IsVisible() {
+        return StarmapCamera.active;
+    }
+
+    public static bool IsMapVisible() {
+        if (self == null) {
+            GameObject selfGo = GameObject.Find(MapController.objectName);
+            self = selfGo.GetComponent<MapController>();
+        }
+
+        return self.StarmapCamera.active;        
+    }
 }

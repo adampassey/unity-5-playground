@@ -8,6 +8,7 @@ public class Starmap : MonoBehaviour {
 
     public GameObject galaxyPrefab;
     public GameObject linePrefab;
+
     private Universe universe;
 
     public void Start() {

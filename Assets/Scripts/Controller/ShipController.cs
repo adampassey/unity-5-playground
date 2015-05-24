@@ -34,6 +34,10 @@ public class ShipController : MonoBehaviour
 			return;
 		}
 
+        if (MapController.IsMapVisible()) {
+            return;
+        }
+
 		if (Input.GetMouseButton (0)) {
 			Vector3 pos = camera.ScreenToWorldPoint (Input.mousePosition);
 			pos.z = 0;
