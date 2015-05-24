@@ -8,6 +8,7 @@ public class Starmap : MonoBehaviour {
 
     public GameObject galaxyPrefab;
     public GameObject linePrefab;
+    public List<GameObject> galaxies = new List<GameObject>();
 
     private Universe universe;
 
@@ -37,6 +38,8 @@ public class Starmap : MonoBehaviour {
             galaxy.offset,
             Quaternion.identity
         ) as GameObject;
+
+        galaxies.Add(galaxyObject);
 
         galaxyObject.transform.parent = transform;
         galaxyObject.layer = 8;
@@ -73,6 +76,7 @@ public class Starmap : MonoBehaviour {
             LineRenderer line = lineObject.GetComponent<LineRenderer>();
             line.SetPosition(0, galaxy.offset);
             line.SetPosition(1, wormhole.galaxy.offset);
+            line.useWorldSpace = false;
 
             buildGalaxy(wormhole.galaxy, galaxy);
         }
